@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Ext_sidepanel_per_tab",
+  "name": "Selective sidepanel per tab",
   "version": "0.1.0",
-  "description": "My Chrome Extension",
+  "description": "The extension opens a side panel selectively for a tab. Other tabs are not affected.",
   "icons": {
     "16": "icons/icon_16.png",
     "32": "icons/icon_32.png",
@@ -12,11 +12,15 @@
   "background": {
     "service_worker": "background.js"
   },
-  "side_panel": {
-    "default_path": "sidepanel.html"
+  "action": {
+    "default_title": "Click to Open Panel"
   },
+  "host_permissions": [
+    "*://*/*"
+  ],
   "permissions": [
+    "scripting",
     "sidePanel",
-    "tabs"
+    "activeTab"
   ]
 }
